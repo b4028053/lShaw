@@ -1,0 +1,32 @@
+<div class="container">
+	<h1 class="">Contact Us</h1>
+	<div class="container">
+		<div class="row">
+			<p> Lorem ipsum dolor sit amet, vim nullam iracundia similique te. Quo agam cotidieque ex, rebum argumentum cum cu, prompta detracto liberavisse eos cu. Quo ut modus platonem comprehensam, quas aliquip sea ad. Cum dicit appetere ex, ad velit cetero accommodare eum. Eam ne eirmod fabellas adolescens, at quo natum veniam.</p>
+		</div>
+		<div class="row">
+			<div class="container">
+				<h4>Enquiries Form</h4>
+				<%= form_for do |f| %>
+					<div class="form-group">
+						<%= label :name %><br />
+						<%= text_field :name, class:'form-control' %><br />
+					</div>
+					<div class="form-group">
+						<%= label :email %><br />
+						<%= text_field :email, class:'form-control' %><br />
+					</div>
+					<div class="form-group">
+						<%= label :subject %><br />
+						<%= text_field :subject, class:'form-control' %><br />
+					</div>
+					<div class="form-group">
+						<%= label :message %><br />
+						<%= text_field :message, class:'form-control' %><br />
+					</div>
+					<%= submit "Submit", class:'btn btn-primary' %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
