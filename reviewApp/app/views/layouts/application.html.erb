@@ -38,9 +38,9 @@
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  display: none;
+  display: block;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #c4c2c2;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -56,7 +56,7 @@
   text-align: left;
 }
 
-/* Add a grey background color to dropdown links on hover */
+/* Add a background color to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: red;
 }
@@ -83,9 +83,9 @@
 
     <div class="container">
         <div class="topnav">
-          <a class="active" href="#"><%= link_to "Home", '#' %></a>
-          <a href="#"><%= link_to "About Us", '#' %></a>
-          <a href="#"><%= link_to "Contact Us", '#' %></a>
+          <a class="active" href="#"><%= link_to "Home", '/static_pages/home' %></a>
+          <a href="#"><%= link_to "About Us", '/static_pages/about' %></a>
+          <a href="#"><%= link_to "Contact Us", '/static_pages/contact' %></a>
           <div class="dropdown">
             <button class="dropbtn">Products
               <i class="fa fa-caret-down"></i>
