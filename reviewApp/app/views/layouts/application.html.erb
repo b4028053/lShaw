@@ -86,7 +86,8 @@
           <a class="active" href="#"><%= link_to "Home", '/static_pages/home' %></a>
           <a href="#"><%= link_to "About Us", '/static_pages/about' %></a>
           <a href="#"><%= link_to "Contact Us", '/static_pages/contact' %></a>
-          <div class="dropdown">
+          <a href="#"><%= link_to "View Products", products_path %></a>
+          <!--<div class="dropdown">
             <button class="dropbtn">Products
               <i class="fa fa-caret-down"></i>
             </button>
@@ -95,7 +96,11 @@
               <a href="#">Product 2</a>
               <a href="#">Product 3</a>
             </div>
-          </div>
+          </div> -->
+          <a href="#"><%= link_to "Create Profile", new_profile_path %></a>
+          <a href="#"><%= link_to "View Profiles", profiles_path %></a>
+          <a href="#"><%= link_to "Add Product", new_product_path %></a>
+          
         </div>
     </div>
 
