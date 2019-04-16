@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
 
   	if user && user.authenticate(params[ :password])
   		session[:user_id]=user.id
+      session[:username]=user.userid
   		redirect_to root_path, notice:
   		"Welcome #{user.userid}, you are now logged in"
   	else

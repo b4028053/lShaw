@@ -83,10 +83,7 @@
 
     <div class="container">
         <div class="topnav">
-          <%= link_to "Home", '/static_pages/home' %>
-          <%= link_to "About Us", '/static_pages/about' %>
-          <%= link_to "Contact Us", '/static_pages/contact' %>
-          <%= link_to "View Products", products_path %>
+          
           <!--<div class="dropdown">
             <button class="dropbtn" onclick="showDropdownOptions()">Products
               <i class="fa fa-caret-down"></i>
@@ -96,16 +93,22 @@
               <a href="#"><%= link_to "Tablets", '/static_pages/tablet' %></a>
               <a href="#"><%= link_to "Smart TVs", '/static_pages/smartTV' %></a>
             </div>
-          </div>-->
-          
-          <%= link_to "Create Account", new_user_path, style: "float:right" %>
+          </div>  profile_path(@profile) -->
+         
           <% if current_user %>
-            <%= link_to "Create Profile", new_profile_path %>
-            <%= link_to "View Profiles", profiles_path %>
+            <%= link_to "Home", '/static_pages/home' %>
+            <%= link_to "About Us", '/static_pages/about' %>
+            <%= link_to "Contact Us", '/static_pages/contact' %>
+            <%= link_to "View Products", products_path %>
+            <%= link_to "View Own Profile", style: "float:right" %> 
+            <%= link_to "View Profiles", profiles_path %> 
+            <%= link_to "Create Profile", new_profile_path, style: "float:right"%>
             <a> <%= link_to 'Log out', session_path('active'), method: :delete, style: "float:right"%></a>
-            <a> <%= current_user.userid %></a>
+            <!--<a> <%= current_user.userid %></a>-->
           <% else %>
             <%= link_to 'Log in', new_session_path, class: "active_nav_link", style: "float:right"%>
+            <%= link_to "Create Account", new_user_path, style: "float:right" %>
+            
           <% end %>
         </div>
     </div>

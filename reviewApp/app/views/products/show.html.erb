@@ -9,4 +9,7 @@
 	<p>Description: <%= @product.description %> </p>
 	<!--<p>Product Photo: <%= @product.productPhoto %> </p>-->
 	<p>Product Photo: <%= image_tag(@product.productPhoto.url, height:"90", width:"80") %> </p>
+
+
+	<%= link_to "Add Review", new_review_path %>
 </div>
