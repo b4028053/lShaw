@@ -7,5 +7,6 @@
 	<p>Category: <%= @product.category %> </p>
 	<p>Released Date: <%= @product.releaseDate %> </p>
 	<p>Description: <%= @product.description %> </p>
-	<p>User Photo: <%= @product.productPhoto %> </p>
+	<!--<p>Product Photo: <%= @product.productPhoto %> </p>-->
+	<p>Product Photo: <%= image_tag(@product.productPhoto.url, height:"90", width:"80") %> </p>
 </div>

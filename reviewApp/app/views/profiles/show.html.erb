@@ -6,5 +6,5 @@
 	<p>Address: <%= @profile.address %> </p>
 	<p>City: <%= @profile.city %> </p>
 	<p>Country: <%= @profile.country %> </p>
-	<p>User Photo: <%= @profile.userPhoto %> </p>
+	<p>User Photo: <%= image_tag(@profile.userPhoto.url, height:"90", width:"80") %> </p>
 </div>

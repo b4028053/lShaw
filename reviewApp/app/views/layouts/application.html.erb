@@ -38,8 +38,8 @@
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  display: block;
-  position: absolute;
+  display: none;
+  /*position: absolute;*/
   background-color: #c4c2c2;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -58,12 +58,12 @@
 
 /* Add a background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: red;
+  background-color: white;
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
+/*.dropdown:hover .dropdown-content {
+  display: block;*/
 }
 
 </style>
@@ -83,29 +83,29 @@
 
     <div class="container">
         <div class="topnav">
-          <a class="active" href="#"><%= link_to "Home", '/static_pages/home' %></a>
-          <a href="#"><%= link_to "About Us", '/static_pages/about' %></a>
-          <a href="#"><%= link_to "Contact Us", '/static_pages/contact' %></a>
-          <a href="#"><%= link_to "View Products", products_path %></a>
+          <%= link_to "Home", '/static_pages/home' %>
+          <%= link_to "About Us", '/static_pages/about' %>
+          <%= link_to "Contact Us", '/static_pages/contact' %>
+          <%= link_to "View Products", products_path %>
           <!--<div class="dropdown">
-            <button class="dropbtn">Products
+            <button class="dropbtn" onclick="showDropdownOptions()">Products
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-              <a href="#">Product 1</a>
-              <a href="#">Product 2</a>
-              <a href="#">Product 3</a>
+              <a href="#"><%= link_to "Smartphones", '/static_pages/smartphone' %></a>
+              <a href="#"><%= link_to "Tablets", '/static_pages/tablet' %></a>
+              <a href="#"><%= link_to "Smart TVs", '/static_pages/smartTV' %></a>
             </div>
-          </div> -->
-          <a href="#"><%= link_to "Create Profile", new_profile_path %></a>
-          <a href="#"><%= link_to "View Profiles", profiles_path %></a>
-          <a href="#"><%= link_to "Add Product", new_product_path %></a>
-          <a href="#"><%= link_to "Create Account", new_user_path %></a>
+          </div>-->
+          
+          <%= link_to "Create Account", new_user_path, style: "float:right" %>
           <% if current_user %>
-            <a> <%= link_to 'Log out', session_path('active'), method: :delete %></a>
+            <%= link_to "Create Profile", new_profile_path %>
+            <%= link_to "View Profiles", profiles_path %>
+            <a> <%= link_to 'Log out', session_path('active'), method: :delete, style: "float:right"%></a>
             <a> <%= current_user.userid %></a>
           <% else %>
-            <a><%= link_to 'Log in', new_session_path, class: "active_nav_link" %></a>
+            <%= link_to 'Log in', new_session_path, class: "active_nav_link", style: "float:right"%>
           <% end %>
         </div>
     </div>
@@ -121,3 +121,11 @@
     <%= yield %>
   </body>
 </html>
+
+<script>
+function showDropdownOptions() {
+ // document.getElementById("myDropdown").toggle("show");
+  $('.dropdown-content').toggle("show");
+}
+
+</script>

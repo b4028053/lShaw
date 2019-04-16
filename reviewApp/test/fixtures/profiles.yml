@@ -2,16 +2,16 @@
 
 one:
   fullName: MyString
-  DOB: 2019-04-09
+  DOB: 2019-04-16
   address: MyString
   city: MyString
   country: MyString
-  userPhoto: MyString
+  userPhoto: 
 
 two:
   fullName: MyString
-  DOB: 2019-04-09
+  DOB: 2019-04-16
   address: MyString
   city: MyString
   country: MyString
-  userPhoto: MyString
+  userPhoto: 

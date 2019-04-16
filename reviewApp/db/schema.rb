@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_141619) do
+ActiveRecord::Schema.define(version: 2019_04_16_135922) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 2019_04_10_141619) do
     t.string "category"
     t.date "releaseDate"
     t.text "description"
-    t.string "productPhoto"
+    t.string "productPhoto_file_name"
+    t.string "productPhoto_content_type"
+    t.integer "productPhoto_file_size"
+    t.datetime "productPhoto_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,7 +33,10 @@ ActiveRecord::Schema.define(version: 2019_04_10_141619) do
     t.string "address"
     t.string "city"
     t.string "country"
-    t.string "userPhoto"
+    t.string "userPhoto_file_name"
+    t.string "userPhoto_content_type"
+    t.integer "userPhoto_file_size"
+    t.datetime "userPhoto_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

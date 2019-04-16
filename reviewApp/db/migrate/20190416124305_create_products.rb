@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :category
       t.date :releaseDate
       t.text :description
-      t.string :productPhoto
+      t.attachment :productPhoto
 
       t.timestamps
     end

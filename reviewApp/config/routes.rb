@@ -35,6 +35,9 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/about'
   get 'static_pages/contact'
+  get 'static_pages/smartphone'
+  get 'static_pages/tablet'
+  get 'static_pages/smartTV'
 
   resources :profiles
   resources :products

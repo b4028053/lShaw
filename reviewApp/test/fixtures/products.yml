@@ -5,15 +5,15 @@ one:
   brand: MyString
   avgCost: 1.5
   category: MyString
-  releaseDate: 2019-04-09
+  releaseDate: 2019-04-16
   description: MyText
-  productPhoto: MyString
+  productPhoto: 
 
 two:
   name: MyString
   brand: MyString
   avgCost: 1.5
   category: MyString
-  releaseDate: 2019-04-09
+  releaseDate: 2019-04-16
   description: MyText
-  productPhoto: MyString
+  productPhoto: 

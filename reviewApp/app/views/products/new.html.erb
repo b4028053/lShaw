@@ -1,7 +1,7 @@
 <div class="container">
 	<h2>Add Product</h2>
 
-	<%= form_for :product, url: products_path do |f| %>
+	<%= form_for :product, url: products_path, :html => {:multipart => true} do |f| %>
 		<div class="form-group">
 			<%= f.label :name %><br />
 			<%= f.text_field :name, class:'form-control' %>
@@ -24,7 +24,7 @@
 
 		<div class="form-group">
 			<%= f.label :releaseDate %><br />
-			<%= f.text_field :releaseDate, class:'form-control' %>
+			<%= f.date_field :releaseDate, class:'form-control' %>
 		</div>
  
 		<div class="form-group">
@@ -34,7 +34,7 @@
 
 		<div class="form-group">
 			<%= f.label :productPhoto %><br />
-			<%= f.text_field :productPhoto, class:'form-control' %>
+			<%= f.file_field :productPhoto %>
 		</div>
 
 		<%= f.submit "Submit", class:'btn btn-primary' %>
