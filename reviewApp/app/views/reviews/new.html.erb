@@ -4,8 +4,16 @@
 	<%= form_for :review, url: reviews_path do |f| %>
 		<div class="form-group">
 			<%= f.label :author %><br />
-			<%= f.text_field :author, class:'form-control' %>
+			<%= f.text_field :author, class:'form-control', value: session[:username]%>
 			<!--:disabled => true, value: session[:username]-->
+		</div>
+
+		<div class="form-group">
+			<%= f.label :productID %><br />
+			<!--<%= f.select :productID, Product.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select Product'},class:'form-control' %>-->
+			<%= f.text_field :productName, class:'form-control', value: @name %>
+			<%= f.hidden_field :productID, class:'form-control', value: @id %>
+			
 		</div>
 
 		<div class="form-group">
@@ -20,7 +28,7 @@
 
 		<div class="form-group">
 			<%= f.label :reviewDate %><br />
-			<%= f.text_field :reviewDate, class:'form-control'%>
+			<%= f.text_field :reviewDate, class:'form-control', :value=>Date.today.strftime("%d/%m/%Y")%>
 			<!--, :value=>Date.today.strftime("%d/%m/%Y")  -->
 		</div>
 

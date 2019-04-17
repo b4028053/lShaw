@@ -4,10 +4,10 @@ one:
   author: MyString
   productRating: 1
   reviewContent: MyText
-  reviewDate: 2019-04-09
+  reviewDate: 2019-04-17
 
 two:
   author: MyString
   productRating: 1
   reviewContent: MyText
-  reviewDate: 2019-04-09
+  reviewDate: 2019-04-17

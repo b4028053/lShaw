@@ -7,6 +7,7 @@
 			<th> Product Rating </th>
 			<th> Review </th>
 			<th> Edit </th>
+			<th> Delete </th>
 		</tr>
 		<% @reviews.each do |review| %>
 		<tr>
@@ -14,6 +15,7 @@
 			<td> <%= review.productRating %> </td>
 			<td> <%= review.reviewContent %> </td>
 			<td> <%= link_to 'Edit', edit_review_path(review) %> </td>
+			<td> <%= link_to 'Delete' %> </td>
 		</tr>
 		<% end %>
 	</table>

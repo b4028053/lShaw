@@ -1,10 +1,17 @@
 class ProductsController < ApplicationController
   def index
     @products=Product.all
+    
   end
 
   def show
     @product=Product.find(params[:id])
+    @reviews=Review.where(params[:productID => @product.id])
+    @profiles=Profile.all
+    #@profileImage=Profile.where(author: [request.requester, request.regional_sales_mgr])
+    #@profileImage=Review.includes(:profile).where(:author => :fullName)
+    #@image=Review.joins(:profile).where(['author = ?', '@profiles.fullName'])
+    @image = Review.joins(:profile).where(['author = ?', :fullName => @profiles.fullName]).select("profile.*").find(params[:fullName => @profiles.fullName])
   end
 
   def new
