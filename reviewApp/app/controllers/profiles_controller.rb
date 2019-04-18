@@ -1,10 +1,14 @@
 class ProfilesController < ApplicationController
   def index
     @profiles=Profile.all
+    @users=Users.all
   end
 
   def show
     @profile=Profile.find(params[:id])
+
+    #@ownReviews=Review.joins(:profile).where(:profiles_id => @profile.id)
+    @ownReviews=Review.where(:profiles_id => @profile.id)
   end
 
   def new

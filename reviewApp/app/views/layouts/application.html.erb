@@ -100,10 +100,16 @@
             <%= link_to "About Us", '/static_pages/about' %>
             <%= link_to "Contact Us", '/static_pages/contact' %>
             <%= link_to "View Products", products_path %>
-            <%= link_to "View Own Profile", style: "float:right" %> 
-            <%= link_to "View Profiles", profiles_path %> 
-            <%= link_to "Create Profile", new_profile_path, style: "float:right"%>
-            <a> <%= link_to 'Log out', session_path('active'), method: :delete, style: "float:right"%></a>
+            <%= link_to 'Log out', session_path('active'), method: :delete, style: "float:right"%>
+
+            <% if hasProfile %>
+              <%= link_to "View Own Profile", profile_path(hasProfile), style: "float:right" %>
+            <% else %>
+              <%= link_to "Create Profile", new_profile_path, style: "" %>
+            <% end %>
+
+            <!--<%= link_to "View Profiles", profiles_path %> -->
+          
             <!--<a> <%= current_user.userid %></a>-->
           <% else %>
             <%= link_to 'Log in', new_session_path, class: "active_nav_link", style: "float:right"%>
