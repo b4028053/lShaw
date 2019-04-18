@@ -10,7 +10,6 @@
 
 		<div class="form-group">
 			<%= f.label :productID %><br />
-			<!--<%= f.select :productID, Product.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select Product'},class:'form-control' %>-->
 			<%= f.text_field :productName, class:'form-control', value: @name %>
 			<%= f.hidden_field :productID, class:'form-control', value: @id %>
 			

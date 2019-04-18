@@ -1,6 +1,8 @@
 class Profile < ApplicationRecord
 
 	has_many :reviews
+	belongs_to :user, optional: true
+	
 	has_attached_file :userPhoto
 
 	validates :fullName, presence:true

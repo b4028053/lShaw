@@ -5,6 +5,7 @@
 		<div class="form-group">
 			<%= f.label :fullName %><br />
 			<%= f.text_field :fullName, class:'form-control' %>
+			<%= f.hidden_field :users_id, class:'form-control', value: session[:user_id] %>
 		</div>
 
 		<div class="form-group">

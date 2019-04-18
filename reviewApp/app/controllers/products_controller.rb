@@ -6,12 +6,16 @@ class ProductsController < ApplicationController
 
   def show
     @product=Product.find(params[:id])
-    @reviews=Review.where(params[:productID => @product.id])
+    @reviews=Review.where(:productID => @product.id)
     @profiles=Profile.all
     #@profileImage=Profile.where(author: [request.requester, request.regional_sales_mgr])
     #@profileImage=Review.includes(:profile).where(:author => :fullName)
     #@image=Review.joins(:profile).where(['author = ?', '@profiles.fullName'])
-    @image = Review.joins(:profile).where(['author = ?', :fullName => @profiles.fullName]).select("profile.*").find(params[:fullName => @profiles.fullName])
+    #@image = Review.joins(:profile).where(['author = ?', :fullName => @profiles.fullName]).select("profile.*").find(params[:fullName => @profiles.fullName])
+    #@profilePhoto = Review.joins('INNER JOIN profile').where('reviews.author' => @profiles.fullName) #.where("rates.rateable_id = locations.id")
+    #@profilePhoto = Review.joins('INNER JOIN profiles ON profiles.fullName = reviews.author') #.where('rates.rater_id' => @user)
+    #@profilePhoto=Profile.joins(:review).select('profiles.userPhoto')
+    @profilePhoto=Review.joins('INNER JOIN profiles ON reviews.author = profiles.fullName').select('reviews.*,profiles.*').where(:productID => @product.id)
   end
 
   def new

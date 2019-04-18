@@ -13,17 +13,20 @@
 
 	<%= link_to "Add Review", new_review_path({name: @product.name, id: @product.id }) %>
 
+	<!--<% debug @profilePhoto %> -->
+
 	<table border="1" class="table">
 		<tr>
-			<th style="width:200px;"> Author Photo</th>
+			<th style="width:150px;"> Author Photo</th>
 			<th style="width:200px;"> Author </th>
 			<th style="width:100px;"> Product Rating </th>
 			<th> Review </th>
 		</tr>
 
-	<% Review.all.each do |review| %>
+	<% @profilePhoto.all.each do |review| %>
+	<%= debug review %>
 		<tr>
-			<td><%= image_tag(@image.userPhoto.url) %></td>
+			<td> <%= review.userPhoto_file_name %> </td>
 			<td><%= review.author %></td>
 			<td><%= review.productRating %></td>
 			<td><%= review.reviewContent %></td>

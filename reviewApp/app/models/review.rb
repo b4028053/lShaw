@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
 
-	belongs_to :profile
-	#belongs_to :product
+	belongs_to :profile, optional: true
+	belongs_to :product, optional: true
 
 	validates :author, presence:true
 	validates :productRating, presence:true
