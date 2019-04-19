@@ -8,7 +8,8 @@
 	<p>Country: <%= @profile.country %> </p>
 	<p>User Photo: <%= image_tag(@profile.userPhoto.url, height:"90", width:"80") %> </p>
 
-	<%= link_to 'Reset Your Password', edit_user_path(session[:user_id])%> <br />
+	<%= link_to 'Edit', edit_profile_path(@profile), style:"margin-right: 15px;"%>  
+	<%= link_to 'Reset Your Password', edit_user_path(session[:user_id])%> <br /><br />
 
 
 	<% debug @ownReviews %>

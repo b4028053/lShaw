@@ -11,9 +11,6 @@
 	<p>Product Photo: <%= image_tag(@product.productPhoto.url, height:"90", width:"80") %> </p>
 
 	<%= link_to "Add Review", new_review_path({name: @product.name, id: @product.id }) %>
-
-	<!--<% debug @profilePhoto %> -->
-	<!--<%= debug @profilePhoto %>-->
 	
 	<table border="1" class="table">
 		<tr>
@@ -21,15 +18,20 @@
 			<th style="width:200px;"> Author </th>
 			<th style="width:100px;"> Product Rating </th>
 			<th> Review </th>
+			<th> Options </th>
 		</tr>
 
 	<% @profilePhoto.each do |review| %>
 		<tr>
-			<!--<td> <%= review.userPhoto_file_name %> </td>-->
 			<td> <%= image_tag(review.profile.userPhoto.url, height:"90", width:"130") %></td>
 			<td><%= review.author %></td>
 			<td><%= review.productRating %></td>
 			<td><%= review.reviewContent %></td>
+			<td> 
+				<% if review.profile_id == session[:profile_id] %>
+				<%= link_to 'Edit', edit_review_path(review.id) %> <br/> <%= link_to 'Delete', review_path(review.id), method: :Delete, data:{confirm: "Are you sure you want to delete this review?"} %>
+				<% end %>
+			</td>
 		</tr>
 	<% end %>
 	</table>

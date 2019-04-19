@@ -8,21 +8,8 @@ class ProductsController < ApplicationController
     @product=Product.find(params[:id])
     @reviews=Review.where(:productID => @product.id)
     @profiles=Profile.all
-
-    #@profile = Profile.joins('INNER JOIN users ON profiles.users_id = users.id').select('profiles.id').where(:users_id => session[:user_id])
-    #@profileImage=Profile.where(author: [request.requester, request.regional_sales_mgr])
-    #@profileImage=Review.includes(:profile).where(:author => :fullName)
-    #@image=Review.joins(:profile).where(['author = ?', '@profiles.fullName'])
-    #@image = Review.joins(:profile).where(['author = ?', :fullName => @profiles.fullName]).select("profile.*").find(params[:fullName => @profiles.fullName])
-    #@profilePhoto = Review.joins('INNER JOIN profile').where('reviews.author' => @profiles.fullName) #.where("rates.rateable_id = locations.id")
-    #@profilePhoto = Review.joins('INNER JOIN profiles ON profiles.fullName = reviews.author') #.where('rates.rater_id' => @user)
-    #@profilePhoto=Profile.joins(:review).select('profiles.userPhoto')
-
-    @profilePhoto=Review.joins('INNER JOIN profiles ON reviews.profile_id = profiles.id').select('reviews.*,profiles.*').where(:productID => @product.id)
-    #@reviews=Review.find_by_sql["select r.* from reviews r, profiles p, where r.profiles_id = p.id and p.id = ?", params[session[:profile_id]]]
-
-    #@prodReview = Review.joins(:profile).select('reviews.*, profiles.*').where(:profiles_id => 4)
-
+    #@profilePhoto=Review.joins('INNER JOIN profiles ON reviews.profile_id = profiles.id').select('reviews.*,profiles.*').where(:productID => @product.id)    
+    @profilePhoto=Review.joins(:profile).where(:productID => @product.id)
   end
 
   def new
@@ -45,6 +32,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def search
+    @products = if params[:term]
+      Product.where('name LIKE ?', "%#{params[:term]}")
+    else
+      Product.all
+    end
   end
 
   private

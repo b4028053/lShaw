@@ -40,7 +40,13 @@ Rails.application.routes.draw do
   get 'static_pages/smartTV'
 
   resources :profiles
-  resources :products
+
+  resources :products do 
+    collection do
+      get :search
+    end
+  end
+  
   resources :reviews
   resources :users
   resources :sessions

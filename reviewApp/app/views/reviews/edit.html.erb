@@ -4,13 +4,14 @@
 	<%= form_for :review, url: reviews_path do |f| %>
 		<div class="form-group">
 			<%= f.label :author %><br />
-			<%= f.text_field :author, class:'form-control' %>
+			<%= f.text_field :author, class:'form-control', :readonly => true%>
+			<%= f.hidden_field :profile_id, class:'form-control', value: session[:profile_id]%>
 			<!--:disabled => true, value: session[:username]-->
 		</div>
 
 		<div class="form-group">
 			<%= f.label :productID %><br />
-			<%= f.text_field :productID, class:'form-control' %>
+			<%= f.text_field :productID, class:'form-control', :readonly => true %>
 			
 		</div>
 
@@ -26,7 +27,7 @@
 
 		<div class="form-group">
 			<%= f.label :reviewDate %><br />
-			<%= f.text_field :reviewDate, class:'form-control' %>
+			<%= f.text_field :reviewDate, class:'form-control', :readonly => true %>
 			<!--, :value=>Date.today.strftime("%d/%m/%Y")  -->
 		</div>
 
