@@ -1,14 +1,15 @@
 class ProfilesController < ApplicationController
   def index
     @profiles=Profile.all
-    @users=Users.all
+    
   end
 
   def show
     @profile=Profile.find(params[:id])
 
-    #@ownReviews=Review.joins(:profile).where(:profiles_id => @profile.id)
-    @ownReviews=Review.where(:profiles_id => @profile.id)
+    @ownReviews=Review.joins(:profile).where(:profile_id => @profile.id)
+    #@ownReviews=Review.joins('INNER JOIN profiles ON reviews.profile_id = profiles.id').select('reviews.*').where(:profile_id => @profile.id)
+    #@ownReviews=Review.where(:profile_id => @profile.id)
   end
 
   def new
@@ -18,7 +19,7 @@ class ProfilesController < ApplicationController
   def create
     @profile=Profile.new(profile_params)
     if @profile.save
-      redirect_to profiles_path
+      redirect_to @profile
     else
       render 'new'
     end

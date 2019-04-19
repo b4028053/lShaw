@@ -20,7 +20,9 @@ class SessionsController < ApplicationController
       	redirect_to new_profile_path, notice:
         "#{user.userid}'s profile"
       else
-        redirect_to root_path, notice:
+        session[:profile_id]=profile.id
+        
+        redirect_to profile_path(profile), notice:
       	"Welcome #{user.userid}, you are now logged in"
       end
   	else

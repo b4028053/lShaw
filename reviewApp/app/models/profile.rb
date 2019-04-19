@@ -4,6 +4,7 @@ class Profile < ApplicationRecord
 	belongs_to :user, optional: true
 	
 	has_attached_file :userPhoto
+	# :path => "jBloggs/myRubyApps/lShaw/reviewApp/app/assets/images"
 
 	validates :fullName, presence:true
 	validates :DOB, presence:true

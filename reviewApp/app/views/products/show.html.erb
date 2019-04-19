@@ -10,23 +10,23 @@
 	<!--<p>Product Photo: <%= @product.productPhoto %> </p>-->
 	<p>Product Photo: <%= image_tag(@product.productPhoto.url, height:"90", width:"80") %> </p>
 
-
 	<%= link_to "Add Review", new_review_path({name: @product.name, id: @product.id }) %>
 
 	<!--<% debug @profilePhoto %> -->
-
+	<!--<%= debug @profilePhoto %>-->
+	
 	<table border="1" class="table">
 		<tr>
-			<th style="width:150px;"> Author Photo</th>
+			<th style="width:100px;"> Author Photo</th>
 			<th style="width:200px;"> Author </th>
 			<th style="width:100px;"> Product Rating </th>
 			<th> Review </th>
 		</tr>
 
-	<% @profilePhoto.all.each do |review| %>
-	<%= debug review %>
+	<% @profilePhoto.each do |review| %>
 		<tr>
-			<td> <%= review.userPhoto_file_name %> </td>
+			<!--<td> <%= review.userPhoto_file_name %> </td>-->
+			<td> <%= image_tag(review.profile.userPhoto.url, height:"90", width:"130") %></td>
 			<td><%= review.author %></td>
 			<td><%= review.productRating %></td>
 			<td><%= review.reviewContent %></td>
