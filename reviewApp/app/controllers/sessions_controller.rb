@@ -17,13 +17,15 @@ class SessionsController < ApplicationController
       session[:user]=user
 
       if profile.nil?
-      	redirect_to new_profile_path, notice:
-        "#{user.userid}'s profile"
+      	redirect_to new_profile_path
+        #, notice:
+        #{}"#{user.userid}'s profile"
       else
         session[:profile_id]=profile.id
         
-        redirect_to profile_path(profile), notice:
-      	"Welcome #{user.userid}, you are now logged in"
+        redirect_to profile_path(profile)
+        #, notice:
+      	#{}"Welcome #{user.userid}, you are now logged in"
       end
   	else
   		render 'new', alert:
@@ -33,7 +35,8 @@ class SessionsController < ApplicationController
 
   def destroy
   	session[:user_id] = nil
-  	redirect_to root_path, notice:
-  	"You have successfully logged out"
+  	redirect_to root_path
+    #, notice:
+  	#{}"You have successfully logged out"
   end
 end

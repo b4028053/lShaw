@@ -24,11 +24,11 @@
 			</div>
 		<% end %>
 
-		<%= f.text_field :userid, placeholder: 'Enter a username', class:'form-control' %>
-		<%= f.email_field :email, placeholder: 'Enter a email', class:'form-control' %>
-		<%= f.password_field :password, placeholder: 'Enter a password', class:'form-control' %>
-		<%= f.password_field :password_confirmation, placeholder: 'Confirm your password', class:'form-control' %>
-		<%= f.submit 'Create' %>
+		<%= f.text_field :userid, placeholder: 'Enter a username', class:'form-control inputFields' %>
+		<%= f.email_field :email, placeholder: 'Enter a email', class:'form-control inputFields' %>
+		<%= f.password_field :password, placeholder: 'Enter a password', class:'form-control inputFields' %>
+		<%= f.password_field :password_confirmation, placeholder: 'Confirm your password', class:'form-control inputFields' %>
+		<%= f.submit 'Create', class:'submitBtn' %>
 	<% end %>
 	</div>
 </div>

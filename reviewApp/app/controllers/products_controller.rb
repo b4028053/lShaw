@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     @product=Product.find(params[:id])
     @reviews=Review.where(:productID => @product.id)
     @profiles=Profile.all
-    #@profilePhoto=Review.joins('INNER JOIN profiles ON reviews.profile_id = profiles.id').select('reviews.*,profiles.*').where(:productID => @product.id)    
+       
     @profilePhoto=Review.joins(:profile).where(:productID => @product.id)
   end
 

@@ -8,8 +8,7 @@ class ProfilesController < ApplicationController
     @profile=Profile.find(params[:id])
 
     @ownReviews=Review.joins(:profile).where(:profile_id => @profile.id)
-    #@ownReviews=Review.joins('INNER JOIN profiles ON reviews.profile_id = profiles.id').select('reviews.*').where(:profile_id => @profile.id)
-    #@ownReviews=Review.where(:profile_id => @profile.id)
+  
   end
 
   def new

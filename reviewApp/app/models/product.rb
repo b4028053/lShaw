@@ -10,9 +10,10 @@ class Product < ApplicationRecord
 	validates :category, presence:true
 	validates :releaseDate, presence:true
 	validates :description, presence:true
+	validates :productPhoto, presence:true
 
 	#validates_attachment :productPhoto, size: { less_than: 1.megabyte }
 	#validates_attachment_content_type :productPhoto, :content_type => /^image\/(png|gif|jpeg)/
 	#validates_attachment_file_name :productPhoto, :matches => [/png\Z/, /je?g\Z/, /gif\Z/]
-	validates_attachment_content_type :productPhoto, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif", "application/pdf"]
+	validates_attachment_content_type :productPhoto, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 end

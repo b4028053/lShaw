@@ -12,8 +12,9 @@ class UsersController < ApplicationController
   def create
     @user=User.new(user_params)
     if @user.save
-       redirect_to static_pages_home_path, notice:
-       "Welcome #{@user.userid}!"
+       redirect_to new_session_path
+       #, notice:
+       #{}"Welcome #{@user.userid}!"
     else
        render 'new'
     end

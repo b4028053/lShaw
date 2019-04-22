@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
   def create
     @review=Review.new(review_params)
     if @review.save
-      redirect_to reviews_path
+      redirect_to product_path(@review.productID)
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     if @review.update(review_params)
-       redirect_to products_path
+       redirect_to product_path(@review.productID)
     else
        render 'edit'
     end
@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review=Review.find(params[:id])
     @review.destroy
-    redirect_to reviews_path
+    redirect_to product_path(@review.productID)
   end
 
   private
