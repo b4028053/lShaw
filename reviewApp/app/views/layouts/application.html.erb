@@ -34,7 +34,7 @@
 
               <!--<%= link_to "View Profiles", profiles_path %> -->
             
-              <!--<a> <%= current_user.userid %></a>-->
+              <!--<p> <%= "Welcome #{current_user.userid}" %></p>-->
             <% else %>
               <%= link_to 'Log in', new_session_path, class: "active_nav_link mainLinks", style: "float:right"%>
               <%= link_to "Create Account", new_user_path, class:"mainLinks", style: "float:right" %>

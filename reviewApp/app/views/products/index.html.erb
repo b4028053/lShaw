@@ -15,23 +15,23 @@
 		<tr>
 			<th> Name </th>
 			<th> Brand </th>
-			<!--<th> Average Cost </th>
+			<!--<th> Average Cost </th>-->
 			<th> Category </th>
-			<th> Released Date </th>
+			<!--<th> Released Date </th>
 			<th> Description </th>-->
 			<th> Product Photo </th>
-			<th> Product Link </th>
+			<th> Options </th>
 		</tr>
 		<% @products.each do |product| %>
 		<tr>
 			<td> <%= product.name %> </td>
 			<td> <%= product.brand %> </td>
-			<!--<td> <%= product.avgCost %> </td>
+			<!--<td> <%= product.avgCost %> </td>-->
 			<td> <%= product.category %> </td>
-			<td> <%= product.releaseDate %> </td>
+			<!--<td> <%= product.releaseDate %> </td>
 			<td> <%= product.description %> </td>-->
 			<!--<td> <%= product.productPhoto %> </td>-->
-			<td> <%= image_tag product.productPhoto.url, height:"70", width:"60" %> </td>
+			<td> <%= image_tag product.productPhoto.url, height:"140", width:"140" %> </td>
 			<td> <%= link_to 'View Details', product_path(product) %> </td>
 		</tr>
 		<% end %>

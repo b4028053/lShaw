@@ -13,6 +13,10 @@
  */
 @import "bootstrap";
 
+body {
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
 .inputFields{
 	width:350px;
 	margin-top:10px;	
@@ -27,10 +31,14 @@
 	width:400px;
 }
 
+.editBtn{
+	margin-top:10px;
+}
+
  /* Navbar container */
 .topnav {
   overflow: hidden;
-  background-color: #65606061;
+  background-color: #66b7f1c4; /*#65606061*/
 }
 
 .topnav{
@@ -46,6 +54,7 @@
 .topnav .MainLinks{
   float: left;
   font-size: 16px;
+  font-weight:bold;
   color: black;
   text-align: center;
   padding: 14px 16px;

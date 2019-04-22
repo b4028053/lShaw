@@ -8,7 +8,7 @@
 	<p>Released Date: <%= @product.releaseDate %> </p>
 	<p>Description: <%= @product.description %> </p>
 	<!--<p>Product Photo: <%= @product.productPhoto %> </p>-->
-	<p>Product Photo: <%= image_tag(@product.productPhoto.url, height:"90", width:"80") %> </p>
+	<p>Product Photo: <%= image_tag(@product.productPhoto.url, height:"140", width:"140") %> </p>
 
 	<%= link_to "Add Review", new_review_path({name: @product.name, id: @product.id }) %>
 	
@@ -23,7 +23,7 @@
 
 	<% @profilePhoto.each do |review| %>
 		<tr>
-			<td> <%= image_tag(review.profile.userPhoto.url, height:"90", width:"130") %></td>
+			<td> <%= image_tag(review.profile.userPhoto.url, height:"140", width:"140") %></td>
 			<td><%= review.author %></td>
 			<td><%= review.productRating %></td>
 			<td><%= review.reviewContent %></td>
